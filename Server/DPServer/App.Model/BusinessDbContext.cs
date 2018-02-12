@@ -19,5 +19,10 @@ namespace App.Model
             return new BusinessDbContext();
         }
 
+        public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskType> TaskTypes { get; set; }
+        public DbSet<TaskState> TaskStates { get; set; }
+        public DbSet<TaskReminder> TaskReminders { get; set; }
+
     }
 }
