@@ -17,13 +17,13 @@ namespace App.Commons
         [Key]
         public string Id { get; set; }
         [Required]
-        public string CreationUser { get; set; }
+        public string CreatedBy { get; set; }
         [Required]
         public DateTime CreationTime { get; set; }
         [Required]
-        public string LastUpdateUser { get; set; }
+        public string LastUpdatedBy { get; set; }
         [Required]
-        public DateTime LastUpdateTime { get; set; }
+        public DateTime LastUpdatedTime { get; set; }
         [Required]
         public string CreatedFrom { get; set; }
         [Required]
