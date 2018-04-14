@@ -11,7 +11,7 @@ namespace App.Model
     {
         public BusinessDbContext() : base("DefaultBusinessConnection")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public static BusinessDbContext Create()

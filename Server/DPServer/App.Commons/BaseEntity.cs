@@ -19,14 +19,14 @@ namespace App.Commons
         [Required]
         public string CreatedBy { get; set; }
         [Required]
-        public DateTime CreationTime { get; set; }
+        public DateTime CreatedAt { get; set; }
         [Required]
-        public string LastUpdatedBy { get; set; }
+        public string ModifiedBy { get; set; }
         [Required]
-        public DateTime LastUpdatedTime { get; set; }
+        public DateTime ModifiedAt { get; set; }
         [Required]
         public string CreatedFrom { get; set; }
         [Required]
-        public string UpdatedFrom { get; set; }
+        public string ModifiedFrom { get; set; }
     }
 }

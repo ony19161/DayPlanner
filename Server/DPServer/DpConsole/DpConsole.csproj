@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A2394D1F-B8FD-41AC-92EC-2252D5535E1D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.Model</RootNamespace>
-    <AssemblyName>App.Model</AssemblyName>
+    <ProjectGuid>{0765EE73-A33E-49F7-962A-415960C3CBD4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DpConsole</RootNamespace>
+    <AssemblyName>DpConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,21 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessDbContext.cs" />
-    <Compile Include="Migrations\201802121817413_InitDb.cs" />
-    <Compile Include="Migrations\201802121817413_InitDb.Designer.cs">
-      <DependentUpon>201802121817413_InitDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804131748004_PropertyChange.cs" />
-    <Compile Include="Migrations\201804131748004_PropertyChange.Designer.cs">
-      <DependentUpon>201804131748004_PropertyChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task.cs" />
-    <Compile Include="TaskReminder.cs" />
-    <Compile Include="TaskState.cs" />
-    <Compile Include="TaskType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,14 +61,14 @@
       <Project>{4a04ba6d-507f-4607-b7d7-607dd2ad9991}</Project>
       <Name>App.Commons</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802121817413_InitDb.resx">
-      <DependentUpon>201802121817413_InitDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804131748004_PropertyChange.resx">
-      <DependentUpon>201804131748004_PropertyChange.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\App.Model\App.Model.csproj">
+      <Project>{a2394d1f-b8fd-41ac-92ec-2252d5535e1d}</Project>
+      <Name>App.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Repository\App.Repository.csproj">
+      <Project>{3f9cd6ee-f052-4855-b78b-f7569a2f792e}</Project>
+      <Name>App.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
